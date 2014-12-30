@@ -95,16 +95,16 @@ module.exports = yeoman.generators.Base.extend({
         this.fs.write(this.destinationPath(this.packageConfig), JSON.stringify(fekitConfig, undefined, 4));
       }
     }
-  }/*,
+  },
 
   install: function () {
     //install
-    this.npmInstall();
+    //this.npmInstall();
 
     if(this.packageManagement === "fekit") {
       this.spawnCommand('fekit', ['install'])  
     } else {
       this.bowerInstall(); 
     }
-  }*/
+  }
 });
