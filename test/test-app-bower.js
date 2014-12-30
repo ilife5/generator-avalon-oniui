@@ -9,6 +9,7 @@ describe('avalon-oniui:app bower', function () {
   console.log('here')
   before(function (done) {
     console.log('here2')
+    this.timeout(10000)
     try {
       helpers.run(path.join(__dirname, '../app'))
         .inDir(path.join(os.tmpdir(), './temp-test'))
