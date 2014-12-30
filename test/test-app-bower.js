@@ -7,23 +7,18 @@ var os = require('os');
 
 describe('avalon-oniui:app bower', function () {
   this.timeout(20000);
-  before(function () {
-    this.runGen = helpers.run(path.join(__dirname, '../app'))
-      .inDir(path.join(os.tmpdir(), './temp-test'))
+  before(function (done) {
+    helpers.run(path.join(__dirname, '../app'))
       .withPrompt({
         packageManagement: "bower",
         appName: "avalon_oniui_yo"
-      });
+      }).on('end', done);
   });
 
-  it('creates files', function (done) {
-    this.runGen.on('end', function() {
-        console.log('END IN TEST');
-        assert.file([
-          'bower.json',
-          'package.json'
-        ]);
-        done();
-    });
+  it('creates files', function () {
+    assert.file([
+      'bower.json',
+      'package.json'
+    ]);
   });
 });
