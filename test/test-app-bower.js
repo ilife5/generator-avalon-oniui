@@ -6,7 +6,7 @@ var helpers = require('yeoman-generator').test;
 var os = require('os');
 
 describe('avalon-oniui:app bower', function () {
-  this.timeout(10000);
+  this.timeout(20000);
   before(function () {
     this.runGen = helpers.run(path.join(__dirname, '../app'))
       .inDir(path.join(os.tmpdir(), './temp-test'))
