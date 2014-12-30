@@ -99,12 +99,12 @@ module.exports = yeoman.generators.Base.extend({
 
   install: function () {
     //install
-    //this.npmInstall();
+    this.npmInstall();
 
     if(this.packageManagement === "fekit") {
       this.spawnCommand('fekit', ['install'])  
     } else {
-      this.bowerInstall(); 
+      //this.bowerInstall(); 
     }
   }
 });
