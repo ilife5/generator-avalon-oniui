@@ -1,7 +1,7 @@
 # generator-avalon-oniui [![Build Status](https://secure.travis-ci.org/ilife5/generator-avalon-oniui.png?branch=master)](https://travis-ci.org/ilife5/generator-avalon-oniui)
 
 > [Yeoman](http://yeoman.io) generator
-
+  
 
 ## Getting Started
 
