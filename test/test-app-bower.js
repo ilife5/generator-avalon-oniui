@@ -9,17 +9,23 @@ describe('avalon-oniui:app bower', function () {
   console.log('here')
   before(function (done) {
     console.log('here2')
-    helpers.run(path.join(__dirname, '../app'))
-      .inDir(path.join(os.tmpdir(), './temp-test'))
-      .withOptions({ 'skip-install': true })
-      .withPrompt({
-        packageManagement: "bower",
-        appName: "avalon_oniui_yo"
-      })
-      .onEnd(function() {
-        console.log('here6');
-        done();
-      });
+    try {
+      helpers.run(path.join(__dirname, '../app'))
+        .inDir(path.join(os.tmpdir(), './temp-test'))
+        .withOptions({ 'skip-install': true })
+        .withPrompt({
+          packageManagement: "bower",
+          appName: "avalon_oniui_yo"
+        })
+        .on('end', function() {
+          console.log('here6');
+          done();
+        });
+    } catch(e) {
+      console.log(e);
+      done();
+    }
+    
   });
 
   it('creates files', function () {
