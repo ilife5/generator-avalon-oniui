@@ -71,7 +71,6 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     app: function () {
-      console.log('here3');
       this.fs.copy(
         this.templatePath('_package.json'),
         this.destinationPath('package.json')
@@ -99,7 +98,6 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function () {
-    console.log('here4');
     //install
     this.npmInstall();
 
@@ -108,6 +106,5 @@ module.exports = yeoman.generators.Base.extend({
     } else {
       this.bowerInstall(); 
     }
-    console.log('here5');
   }
 });
