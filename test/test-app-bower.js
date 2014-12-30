@@ -18,7 +18,7 @@ describe('avalon-oniui:app bower', function () {
         appName: "avalon_oniui_yo"
       })
       .on('end', function() {
-        console.log('here3')  ;
+        console.log('here5');
         done();
       });
   });
