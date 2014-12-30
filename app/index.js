@@ -108,6 +108,6 @@ module.exports = yeoman.generators.Base.extend({
     } else {
       this.bowerInstall(); 
     }
-    
+    console.log('here5');
   }
 });

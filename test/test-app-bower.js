@@ -7,7 +7,6 @@ var os = require('os');
 
 describe('avalon-oniui:app bower', function () {
   console.log('here')
-  this.timeout(30000);
   before(function (done) {
     console.log('here2')
     helpers.run(path.join(__dirname, '../app'))
@@ -18,7 +17,7 @@ describe('avalon-oniui:app bower', function () {
         appName: "avalon_oniui_yo"
       })
       .on('end', function() {
-        console.log('here5');
+        console.log('here6');
         done();
       });
   });
