@@ -9,6 +9,7 @@ describe('avalon-oniui:app bower', function () {
   this.timeout(20000);
   before(function (done) {
     helpers.run(path.join(__dirname, '../app'))
+      .inDir(path.join(os.tmpdir(), './temp-test'))
       .withPrompt({
         packageManagement: "bower",
         appName: "avalon_oniui_yo"
