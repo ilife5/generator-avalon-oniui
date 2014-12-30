@@ -95,7 +95,7 @@ module.exports = yeoman.generators.Base.extend({
         this.fs.write(this.destinationPath(this.packageConfig), JSON.stringify(fekitConfig, undefined, 4));
       }
     }
-  },
+  }/*,
 
   install: function () {
     //install
@@ -106,5 +106,5 @@ module.exports = yeoman.generators.Base.extend({
     } else {
       this.bowerInstall(); 
     }
-  }
+  }*/
 });
