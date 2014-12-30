@@ -16,7 +16,7 @@ describe('avalon-oniui:app bower', function () {
         packageManagement: "bower",
         appName: "avalon_oniui_yo"
       })
-      .on('end', function() {
+      .onEnd(function() {
         console.log('here6');
         done();
       });
