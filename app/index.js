@@ -71,28 +71,43 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     app: function () {
-      this.fs.copy(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json')
-      );
+      
+      //bower.json || fekit.config
       this.fs.copy(
         this.templatePath('_' + this.packageConfig),
         this.destinationPath(this.packageConfig)
       );
 
-      //readme
-      this.fs.copy(
-        this.templatePath("_README.md"),
-        this.destinationPath("README.md")
-      );
-      this.fs.write(this.destinationPath("README.md"), "# " + this.appName + os.EOL + os.EOL + this.fs.read(this.templatePath("_README.md")))
-      
       //for fekti package management
       if(this.packageManagement === "fekit") {
+        //目录结构
         fekitUtils.generateForders.call(this);
+
+        //fekit.config
         var fekitConfig = this.fs.readJSON(this.templatePath('_' + this.packageConfig));
         fekitConfig.name = this.appName;
         this.fs.write(this.destinationPath(this.packageConfig), JSON.stringify(fekitConfig, undefined, 4));
+
+        //README
+        this.fs.write(this.destinationPath("README.md"), "# " + this.appName + os.EOL + os.EOL + this.fs.read(this.templatePath("_README-fekit.md")))
+
+        //encironment.yaml
+        this.fs.copy(
+          this.templatePath('_environment.yaml'),
+          this.destinationPath('environment.yaml')
+        );
+
+        //build.sh
+        this.fs.copy(
+          this.templatePath('_build.sh'),
+          this.destinationPath('build.sh')
+        );
+      } else {
+        //npm pacage.json
+        this.fs.copy(
+          this.templatePath('_package.json'),
+          this.destinationPath('package.json')
+        );
       }
     }
   },

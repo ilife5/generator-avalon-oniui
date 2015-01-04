@@ -29,6 +29,8 @@
 
 README的作用就是告诉我们这个项目是什么，可以做什么以及怎么用，一个avalon项目的README应该至少包含如下内容：
 
++ 目录结构说明
+
 + 项目用途及简单介绍
 
 + 部署说明
@@ -45,7 +47,7 @@ environment.yaml用来做不同环境的区分hook，可以用来区分本地（
 
 ### fekit_modules
 
-用来放置fekit的modules，关于fekit组件源的用法请参照“组件”
+用来放置fekit的modules
 
 ### src
 
